@@ -1,1 +1,1 @@
-# php_techcommit_fizzbuzz_01
+# php_techcommit_fizzbuzz_02
