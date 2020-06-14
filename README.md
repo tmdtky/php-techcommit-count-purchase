@@ -1,1 +1,1 @@
-# php-techcommit-triangle-sum
+# php-techcommit-dice-back-number
