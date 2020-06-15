@@ -1,1 +1,1 @@
-# php-techcommit-calc-total-price
+# php-techcommit-calc-distance-earthquake

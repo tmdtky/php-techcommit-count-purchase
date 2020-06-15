@@ -1,31 +1,17 @@
 <?php
-    const TAX = 1.1;
+    /*
+       大森公式より「P波の速さ」×「初期微動継続時間」=「震源からの距離」
+       大森公式に関する参考情報
+       http://www2.kobe-c.ed.jp/shizen/strata/equake/trans/index2.html
+    */
 
-    while (true) {
-        try {
-            print "商品の金額を入力してください";
-            $product_price = trim(fgets(STDIN));
-            if ($product_price < 0) {
-                throw new Exception();
-            }
-            if (is_numeric($product_price) === false) {
-                throw new Exception();
-            }
+    // P波の速さ(7km/秒)
+    const P_WAVE = 7;
 
-            print "商品の個数を入力してください";
-            $product_quantity = trim(fgets(STDIN));
-            if ($product_quantity < 0) {
-                throw new Exception();
-            }
-            if (is_numeric($product_quantity) === false) {
-                throw new Exception();
-            }
+    // 初期微動継続時間
+    print "初期微動継続時間（秒）を入力してください。";
+    $duration_of_preliminary_tremors = trim(fgets(STDIN));
 
-            $total_price = $product_price * $product_quantity * TAX;
-
-            print "合計金額は${total_price}円です。";
-            return;
-        } catch (Exception $ex) {
-            print "入力の値が不正です。0以上の数を入力してください。";
-        }
-    }
+    //震源からの距離
+    $distance_to_epicenter = P_WAVE * $duration_of_preliminary_tremors;
+    print "震源地から現在地までの距離（km）は${distance_to_epicenter}kmです。";
